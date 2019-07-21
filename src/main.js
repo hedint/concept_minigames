@@ -1,8 +1,11 @@
 import Vue from "vue";
-import App from "./App.vue";
+import HelloWorld from "./components/HelloWorld";
 
-Vue.config.productionTip = false;
-
-new Vue({
-  render: h => h(App)
-}).$mount("#app");
+const plugin = {
+  install() {
+    Vue.component("HelloWorld", HelloWorld);
+  }
+};
+Vue.use(plugin);
+console.log("INITED");
+export default plugin;
